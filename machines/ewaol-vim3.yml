@@ -1,0 +1,16 @@
+header:
+  version: 1
+  includes:
+    - ewaol.yml
+
+machine: khadas-vim3
+
+repos:
+  meta-meson:
+    url: https://github.com/superna9999/meta-meson.git
+    refspec: hardknott
+    path: layers/meta-meson
+
+local_conf_header:
+  meta-meson: |
+    PREFERRED_PROVIDER_virtual/kernel_meson-gx = "linux-yocto"
