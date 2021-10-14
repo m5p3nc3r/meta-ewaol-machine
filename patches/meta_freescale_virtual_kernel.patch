@@ -1,0 +1,13 @@
+diff --git a/conf/machine/include/imx-base.inc b/conf/machine/include/imx-base.inc
+index 17c7bc17..86c48169 100644
+--- a/conf/machine/include/imx-base.inc
++++ b/conf/machine/include/imx-base.inc
+@@ -398,7 +398,7 @@ IMX_DEFAULT_KERNEL_mx6ul = "linux-fslc-imx"
+ IMX_DEFAULT_KERNEL_mx6ull = "linux-fslc-imx"
+ IMX_DEFAULT_KERNEL_use-mainline-bsp = "linux-fslc"
+ 
+-PREFERRED_PROVIDER_virtual/kernel ??= "${IMX_DEFAULT_KERNEL}"
++PREFERRED_PROVIDER_virtual/kernel ?= "${IMX_DEFAULT_KERNEL}"
+ 
+ SOC_DEFAULT_IMAGE_FSTYPES = "wic.bmap wic.gz"
+ SOC_DEFAULT_IMAGE_FSTYPES_mxs = "uboot-mxsboot-sdcard wic.bmap wic.gz"

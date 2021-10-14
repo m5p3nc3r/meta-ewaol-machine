@@ -1,0 +1,60 @@
+header:
+  version: 1
+  includes:
+    - repo: meta-ewaol
+      file: meta-ewaol-config/kas/ewaol-base.yml
+
+
+machine: imx8mpevk
+
+repos:
+  # Include the upstream ewaol repository
+  meta-ewaol:
+    url: https://git.gitlab.arm.com/ewaol/meta-ewaol.git
+    refspec: hardknott
+
+  # This repo, with the required changes to the vanilla meta-imx recipes
+  meta-ewaol-nxp:
+    path: meta-ewaol-nxp
+
+  # Upstream recipes required to build for the IMX platform
+  meta-imx:
+    url: https://source.codeaurora.org/external/imx/meta-imx
+    path: layers/meta-imx
+    refspec: 15fddd76b460fb56d9de121eb2d16a1e22cbe900
+    layers:
+      meta-bsp:
+      meta-sdk:
+    patches:
+      patch-1:
+        repo: meta-ewaol-nxp
+        path: patches/meta_imx_virtual_kernel.patch
+      patch-2:
+        repo: meta-ewaol-nxp
+        path: patches/meta_imx_fixup_viv_license.patch
+      
+
+  meta-freescale:
+    url: https://github.com/Freescale/meta-freescale
+    path: layers/meta-freescale
+    refspec: 80dbe4bd63bd537fc9cfda2e009f8543464b4698
+
+  meta-freescale-distro:
+    url: https://github.com/Freescale/meta-freescale-distro
+    path: layers/meta-freescale-distro
+    refspec: 916df6d24c0a33a3b1533bde70b6a2724ec77af4
+
+  # There is currently a bbappend for dvb-tools that requires meta-multimedia
+  meta-openembedded:
+    layers:
+      meta-multimedia:
+
+local_conf_header:
+  meta-imx: |
+    # Accept the IMX EULA
+    ACCEPT_FSL_EULA = "1"
+    # Use linux-yocto instead of linux-fscl-imx
+    PREFERRED_PROVIDER_virtual/kernel_imx = "linux-yocto"
+    # Exclude broken packages
+    BBMASK += " /meta-imx/meta-bsp/recipes-devtools/python/*"
+  

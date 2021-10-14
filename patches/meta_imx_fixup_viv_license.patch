@@ -1,0 +1,14 @@
+diff --git a/meta-bsp/recipes-kernel/kernel-modules/kernel-module-imx-gpu-viv_6.4.3.p2.0.bb b/meta-bsp/recipes-kernel/kernel-modules/kernel-module-imx-gpu-viv_6.4.3.p2.0.bb
+index 16499adf5..4d7c65e44 100644
+--- a/meta-bsp/recipes-kernel/kernel-modules/kernel-module-imx-gpu-viv_6.4.3.p2.0.bb
++++ b/meta-bsp/recipes-kernel/kernel-modules/kernel-module-imx-gpu-viv_6.4.3.p2.0.bb
+@@ -5,7 +5,7 @@ SUMMARY = "Kernel loadable module for Vivante GPU"
+ DESCRIPTION = "Builds the Vivante GPU kernel driver as a loadable kernel module, \
+ allowing flexibility to use a newer graphics release with an older kernel."
+ LICENSE = "GPLv2"
+-LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
++LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0-only;md5=801f80980d171dd6425610833a22dbe6"
+ 
+ SRCBRANCH = "lf-5.10.y"
+ LOCALVERSION = "-lts-5.10.y"
+ 

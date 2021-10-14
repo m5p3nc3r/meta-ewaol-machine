@@ -1,0 +1,12 @@
+diff --git a/arch/arm/configs/imx_v6_v7_defconfig b/arch/arm/configs/imx_v6_v7_defconfig
+index 05d12b7b76be..9df98af530a4 100644
+--- a/arch/arm/configs/imx_v6_v7_defconfig
++++ b/arch/arm/configs/imx_v6_v7_defconfig
+@@ -123,6 +123,7 @@ CONFIG_MTD_CFI_STAA=y
+ CONFIG_MTD_PHYSMAP=y
+ CONFIG_MTD_PHYSMAP_OF=y
+ CONFIG_MTD_DATAFLASH=y
++CONFIG_MTD_M25P80=y
+ CONFIG_MTD_SST25L=y
+ CONFIG_MTD_RAW_NAND=y
+ CONFIG_MTD_NAND_GPMI_NAND=y
