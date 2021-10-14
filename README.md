@@ -22,7 +22,17 @@ Install the kas tool by following the instructions
 [here](https://kas.readthedocs.io/en/latest/userguide.html)
 
 ```bash
-kas build ewaol-imx8.yml
+kas build machines/ewaol-imx8.yml
+```
+
+Or, if you are building for multiple targets, it can be useful to share download
+assets, build caches and you will have to specify a different output directory.
+
+```bash
+KAS_BUILD_DIR=$PWD/build-imx8 \
+SSTATE_DIR=$HOME/yocto/sstate-cache \
+DL_DIR=$HOME/yocto/downloads \
+kas build machines/ewaol-imx8.yml
 ```
 
 ## Install

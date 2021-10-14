@@ -1,0 +1,20 @@
+header:
+  version: 1
+  includes:
+    - repo: meta-ewaol
+      file: meta-ewaol-config/kas/ewaol-base.yml
+
+repos:
+  # Include the upstream ewaol repository
+  meta-ewaol:
+    url: https://git.gitlab.arm.com/ewaol/meta-ewaol.git
+    refspec: hardknott
+    path: layers/meta-ewaol
+    layers:
+        meta-ewaol-distro:
+        meta-ewaol-tests:
+
+  # TODO: Remove when fix is available upstream
+  meta-arm:
+    layers:
+      meta-arm: excluded
