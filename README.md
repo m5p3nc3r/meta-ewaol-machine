@@ -1,17 +1,10 @@
-# EWAOL for NXP imx8mplus
+# Extra machines for [EWAOL](https://gitlab.arm.com/ewaol/meta-ewaol)
 
 This project contains [kas](https://kas.readthedocs.io/en/latest/index.html)
-configuration to download meta-ewaol and all required layers for the NXP
-platform and build the [EWAOL](https://gitlab.arm.com/ewaol/meta-ewaol)
-reference implementation of the [SOAFEE](http://soafee.io) project.
-
-The project achieves its goals by adding linux-yocto recipes to the default
-meta-imx recipes, with patches applied to the upstream to enable it to apply
-properly.
-
-The linux-yocto recipes have only been tested on the imx8mplus platform, but it
-may work on others.  The aim would be to have the linux-yocto recipes adopted
-by the upstream projects (either meta-imx or meta-freescale).
+configuration to download meta-ewaol and all required layers for multiple
+machines not supported by the upstream project.
+[EWAOL](https://gitlab.arm.com/ewaol/meta-ewaol) is the reference implementation
+of the [SOAFEE](http://soafee.io) project.
 
 _At this point in time, this is very much a 'pet project', so please accept the
 code as you find it, and please don't expect it to always be working._
@@ -43,6 +36,22 @@ kas build machines/ewaol-imx8.yml
 sudo bmaptool copy build/tmp/deploy/images/imx8mpevk/ewaol-image-docker-imx8mpevk.wic.bz2 /dev/mmcblk0
 ```
 
-## Todo
+## Status
 
-* Get the linux-yocto recipes adopted upstream
+| Machine | EWAOL Version |Status  | Notes |
+|---------|---------------|-------|--------|
+| RPi4    | v0.1 | Ok | Booting, able to ssh to target and run a container |
+| imx8mp  | v0.1 | Ok | Booting, able to ssh to target and run a container |
+| vim3    | v0.1 | Compiles | Not yet tested
+
+## Machine specific notes
+
+### iMX8
+
+The project achieves its goals by adding linux-yocto recipes to the default
+meta-imx recipes, with patches added to the upstream to enable it to apply
+properly.
+
+The linux-yocto recipes have only been tested on the imx8mplus platform, but it
+may work on others.  The aim would be to have the linux-yocto recipes adopted
+by the upstream projects (either meta-imx or meta-freescale).
