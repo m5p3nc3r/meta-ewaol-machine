@@ -5,16 +5,31 @@ header:
       file: meta-ewaol-config/kas/ewaol-base.yml
 
 repos:
+  # Include this repo so we can apply patches to upstream meta-ewaol
+  # But we don't include any yocto configuration, so exclude the layers
+  meta-ewaol-machine:
+    layers:
+      recipes-ewaol: excluded
+
   # Include the upstream ewaol repository
   meta-ewaol:
     url: https://git.gitlab.arm.com/ewaol/meta-ewaol.git
-    refspec: hardknott
+    refspec: v0.1.1
     path: layers/meta-ewaol
     layers:
         meta-ewaol-distro:
         meta-ewaol-tests:
+    # Apply patches to fix short term problems until available in a release
+    patches:
+      patch-1:
+        repo: meta-ewaol-machine
+        path: recipes-ewaol/patches/add_missing_leading_space.patch
+
+
 
   # TODO: Remove when fix is available upstream
   meta-arm:
     layers:
       meta-arm: excluded
+
+  

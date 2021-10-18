@@ -1,0 +1,26 @@
+From 5cec0c4c40087e8bb502f857ebc0e228fbf1ba47 Mon Sep 17 00:00:00 2001
+From: Diego Sueiro <diego.sueiro@arm.com>
+Date: Fri, 15 Oct 2021 09:04:17 +0100
+Subject: [PATCH] ewaol-distro/distro/ewaol: Add missing leading space in
+ KERNEL_CLASSES_append
+
+Issue-Id: SCM-3553
+Signed-off-by: Diego Sueiro <diego.sueiro@arm.com>
+Change-Id: Ib1cf0383fd7bf187d40f6f837cf5cee9800d64aa
+---
+ meta-ewaol-distro/conf/distro/ewaol.conf | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/meta-ewaol-distro/conf/distro/ewaol.conf b/meta-ewaol-distro/conf/distro/ewaol.conf
+index c51dc61..0627577 100644
+--- a/meta-ewaol-distro/conf/distro/ewaol.conf
++++ b/meta-ewaol-distro/conf/distro/ewaol.conf
+@@ -26,4 +26,4 @@ PREFERRED_PROVIDER_virtual/docker = "docker-moby"
+ 
+ # This class produces warnings if any kernel configuration
+ # required for the containers runtime is missing
+-KERNEL_CLASSES_append = "containers_kernelcfg_check"
++KERNEL_CLASSES_append = " containers_kernelcfg_check"
+-- 
+GitLab
+
