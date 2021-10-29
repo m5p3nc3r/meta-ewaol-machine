@@ -42,9 +42,9 @@ sudo bmaptool copy build-imx8/tmp/deploy/images/imx8mpevk/ewaol-image-docker-imx
 
 | Machine | EWAOL Version |Status | Notes |
 |---------|---------------|-------|-------|
-| RPi4    | v0.1.1 | Ok | Booting, able to ssh to target and run a container |
-| imx8mp  | v0.1.1 | Ok | Booting, able to ssh to target and run a container |
-| vim3    | v0.1.1 | Compiles | Not yet tested
+| RPi4    | v0.2 | Ok | Booting, able to ssh to target, k3s running |
+| imx8mp  | v0.2 | Ok | Booting, able to ssh to target, k3s running |
+| vim3    | v0.2 | Compiles | Not yet tested
 
 ## Machine specific notes
 
