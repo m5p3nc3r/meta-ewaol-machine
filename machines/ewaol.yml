@@ -9,7 +9,7 @@ repos:
   # But we don't include any yocto configuration, so exclude the layers
   meta-ewaol-machine:
     layers:
-      recipes-ewaol: excluded
+      recipes-ewaol:
 
   # Include the upstream ewaol repository
   meta-ewaol:
@@ -19,4 +19,8 @@ repos:
     layers:
         meta-ewaol-distro:
         meta-ewaol-tests:
-  
+
+local_conf_header:
+  meta-ewaol: |
+    IMAGE_INSTALL_append = " nonrootuser sudo xz"
+    
