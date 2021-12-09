@@ -38,6 +38,10 @@ kas build machines/ewaol-imx8.yml
 sudo bmaptool copy build-imx8/tmp/deploy/images/imx8mpevk/ewaol-image-docker-imx8mpevk.wic.bz2 /dev/mmcblk0
 ```
 
+## Default login
+
+The default non-root user is 'ewaol' with a password 'soafee'.  This user has sudo access if needed.
+
 ## Status
 
 | Machine | EWAOL Version |Status | Notes |
