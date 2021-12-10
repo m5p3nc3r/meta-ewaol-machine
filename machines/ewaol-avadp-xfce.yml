@@ -13,14 +13,6 @@ repos:
     layers:
       .:
 
-  meta-ewaol:
-    url: "https://git.gitlab.arm.com/ewaol/meta-ewaol.git"
-    refspec: v0.2
-    path: layers/meta-ewaol
-    layers:
-      meta-ewaol-distro:
-      meta-ewaol-tests:
-  
   meta-openembedded:
     url: "https://github.com/openembedded/meta-openembedded.git"
     refspec: hardknott
