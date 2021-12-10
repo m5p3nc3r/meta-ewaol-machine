@@ -48,7 +48,8 @@ The default non-root user is 'ewaol' with a password 'soafee'.  This user has su
 |---------|---------------|-------|-------|
 | RPi4    | v0.2 | Ok | Booting, able to ssh to target, k3s running |
 | imx8mp  | v0.2 | Ok | Booting, able to ssh to target, k3s running |
-| vim3    | v0.2 | Compiles | Not yet tested
+| vim3    | v0.2 | Compiles | Not yet tested |
+| generic-arm64 | v0.2 | Ok | Booting, able to ssh to target, k3s running |
 
 ## Machine specific notes
 
@@ -61,3 +62,9 @@ properly.
 The linux-yocto recipes have only been tested on the imx8mplus platform, but it
 may work on others.  The aim would be to have the linux-yocto recipes adopted
 by the upstream projects (either meta-imx or meta-freescale).
+
+### generic-arm64
+
+This has only been tested on the RPi4 using [SystemReady compliant UEFI firmware](https://github.com/pftf/RPi4).
+
+Put UEFI firmware on the sdcard and the EWAOL image on a usb drive.
