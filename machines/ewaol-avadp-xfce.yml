@@ -8,7 +8,7 @@ header:
 repos:
   meta-adlink-ampere:
     url: "https://github.com/ADLINK/meta-adlink-ampere.git"
-    refspec: v2.0
+    refspec: v1.3
     path: layers/meta-adlink-ampere
     layers:
       .:
