@@ -1,0 +1,44 @@
+header:
+  version: 1
+  includes:
+    - ewaol.yml
+    - repo: meta-ewaol
+      file: meta-ewaol-config/kas/sdk.yml
+
+repos:
+  meta-adlink-ampere:
+    url: "https://github.com/ADLINK/meta-adlink-ampere.git"
+    refspec: v2.0
+    path: layers/meta-adlink-ampere
+    layers:
+      .:
+
+  meta-ewaol:
+    url: "https://git.gitlab.arm.com/ewaol/meta-ewaol.git"
+    refspec: v0.2
+    path: layers/meta-ewaol
+    layers:
+      meta-ewaol-distro:
+      meta-ewaol-tests:
+  
+  meta-openembedded:
+    url: "https://github.com/openembedded/meta-openembedded.git"
+    refspec: hardknott
+    path: layers/meta-openembedded
+    layers:
+      meta-xfce:
+      meta-oe:
+      meta-gnome:
+      meta-multimedia:
+
+machine: comhpc
+
+local_conf_header:
+  meta-at: |
+    XSERVER_append = " xserver-xorg-extension-glx xserver-xorg-module-libwfb xserver-xorg-module-exa"
+    IMAGE_INSTALL_append = " packagegroup-core-x11 packagegroup-xfce-base acpid xf86-video-modesetting mesa-demos"
+    DISTRO_FEATURES_append = " opengl x11 glx"
+    PACKAGECONFIG_append_pn-xserver-xorg = " xinerama"    
+
+target:
+  - ewaol-image-docker-sdk
