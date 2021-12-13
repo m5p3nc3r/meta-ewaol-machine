@@ -9,7 +9,7 @@ repos:
   # But we don't include any yocto configuration, so exclude the layers
   meta-ewaol-machine:
     layers:
-      recipes-ewaol:
+      meta-ewaol-ext:
 
   # Include the upstream ewaol repository
   meta-ewaol:
