@@ -9,7 +9,7 @@ repos:
     # This repo, with the required changes to the vanilla meta-imx recipes
   meta-ewaol-machine:
     layers:
-      recipes-imx:
+      meta-ewaol-ext:
 
   # Upstream recipes required to build for the IMX platform
   meta-imx:
