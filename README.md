@@ -68,3 +68,9 @@ by the upstream projects (either meta-imx or meta-freescale).
 This has only been tested on the RPi4 using [SystemReady compliant UEFI firmware](https://github.com/pftf/RPi4).
 
 Put UEFI firmware on the sdcard and the EWAOL image on a usb drive.
+
+## Recipe specific notes
+
+### nvidia-container-toolkit
+
+This recipe is still in testing and currently only supports aarch64 target architecture.

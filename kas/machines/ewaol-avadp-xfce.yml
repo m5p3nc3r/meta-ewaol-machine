@@ -28,7 +28,7 @@ machine: comhpc
 local_conf_header:
   meta-at: |
     XSERVER_append = " xserver-xorg-extension-glx xserver-xorg-module-libwfb xserver-xorg-module-exa"
-    IMAGE_INSTALL_append = " packagegroup-core-x11 packagegroup-xfce-base acpid xf86-video-modesetting mesa-demos nvidia-container-toolkit"
+    IMAGE_INSTALL_append = " packagegroup-core-x11 packagegroup-xfce-base acpid xf86-video-modesetting mesa-demos"
     DISTRO_FEATURES_append = " opengl x11 glx"
     PACKAGECONFIG_append_pn-xserver-xorg = " xinerama"    
 
