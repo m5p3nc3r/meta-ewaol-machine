@@ -22,10 +22,10 @@ repos:
     patches:
       patch-1:
         repo: meta-ewaol-machine
-        path: recipes-imx/patches/meta_imx_virtual_kernel.patch
+        path: meta-ewaol-ext/recipes-imx/patches/meta_imx_virtual_kernel.patch
       patch-2:
         repo: meta-ewaol-machine
-        path: recipes-imx/patches/meta_imx_fixup_viv_license.patch
+        path: meta-ewaol-ext/recipes-imx/patches/meta_imx_fixup_viv_license.patch
       
   meta-freescale:
     url: https://github.com/Freescale/meta-freescale
