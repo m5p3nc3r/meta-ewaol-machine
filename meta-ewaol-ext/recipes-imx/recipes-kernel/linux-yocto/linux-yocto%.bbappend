@@ -1,4 +1,5 @@
 FILESEXTRAPATHS_prepend_mx8 := "${THISDIR}:${THISDIR}/files:"
+COMPATIBLE_MACHINE_mx8 = "mx8"
 
 SRCBRANCH_mx8 = "lf-5.10.y"
 SRCREV_machine_mx8 = "ef3f2cfc6010c13feb40cfb7fd7490832cf86f45"
