@@ -16,7 +16,7 @@ Install the kas tool by following the instructions
 
 ```bash
 # Building for the imx8mp target
-kas build machines/ewaol-imx8.yml
+kas build kas/machines/ewaol-imx8.yml
 ```
 
 Or, if you are building for multiple targets, it can be useful to share download
@@ -27,7 +27,7 @@ assets, build caches and you will have to specify a different output directory.
 KAS_BUILD_DIR=$PWD/build-imx8 \
 SSTATE_DIR=$HOME/yocto/sstate-cache \
 DL_DIR=$HOME/yocto/downloads \
-kas build machines/ewaol-imx8.yml
+kas build kas/machines/ewaol-imx8.yml
 ```
 
 ## Install
@@ -46,10 +46,10 @@ The default non-root user is 'ewaol' with a password 'soafee'.  This user has su
 
 | Machine | EWAOL Version |Status | Notes |
 |---------|---------------|-------|-------|
-| RPi4    | v0.2 | Ok | Booting, able to ssh to target, k3s running |
-| imx8mp  | v0.2 | Ok | Booting, able to ssh to target, k3s running |
-| vim3    | v0.2 | Compiles | Not yet tested |
-| generic-arm64 | v0.2 | Ok | Booting, able to ssh to target, k3s running |
+| RPi4    | v0.2.1 | Ok | Booting, able to ssh to target, k3s running |
+| imx8mp  | v0.2.1 | Ok | Booting, able to ssh to target, k3s running |
+| vim3    | v0.2.1 | Compiles | Not yet tested |
+| generic-arm64 | v0.2.1 | Ok | Booting, able to ssh to target, k3s running |
 
 ## Machine specific notes
 
