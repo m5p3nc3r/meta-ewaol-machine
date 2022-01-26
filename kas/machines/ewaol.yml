@@ -14,7 +14,7 @@ repos:
   # Include the upstream ewaol repository
   meta-ewaol:
     url: https://git.gitlab.arm.com/ewaol/meta-ewaol.git
-    refspec: v0.2.1
+    refspec: v0.2.2
     path: layers/meta-ewaol
     layers:
         meta-ewaol-distro:
