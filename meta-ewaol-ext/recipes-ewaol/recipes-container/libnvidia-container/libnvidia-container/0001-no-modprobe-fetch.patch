@@ -1,0 +1,23 @@
+diff --git a/mk/nvidia-modprobe.mk b/mk/nvidia-modprobe.mk
+index 3406222..7db0b62 100644
+--- a/mk/nvidia-modprobe.mk
++++ b/mk/nvidia-modprobe.mk
+@@ -10,7 +10,7 @@ VERSION        := 495.44
+ PREFIX         := nvidia-modprobe-$(VERSION)
+ URL            := https://github.com/NVIDIA/nvidia-modprobe/archive/$(VERSION).tar.gz
+ 
+-SRCS_DIR       := $(DEPS_DIR)/src/$(PREFIX)
++SRCS_DIR       := ../nvmodprobe
+ MODPROBE_UTILS := $(SRCS_DIR)/modprobe-utils
+ 
+ LIB_STATIC     := $(MODPROBE_UTILS)/libnvidia-modprobe-utils.a
+@@ -32,9 +32,6 @@ CFLAGS   := -O2 -g -fdata-sections -ffunction-sections -fstack-protector -fno-st
+ LIB_OBJS := $(LIB_SRCS:.c=.o)
+ 
+ $(SRCS_DIR)/.download_stamp:
+-	$(MKDIR) -p $(SRCS_DIR)
+-	$(CURL) --progress-bar -fSL $(URL) | \
+-	$(TAR) -C $(SRCS_DIR) --strip-components=1 -xz $(PREFIX)/modprobe-utils
+ 	$(PATCH) -d $(SRCS_DIR) -p1 < $(PATCH_FILE)
+ 	@touch $@
+ 

@@ -1,0 +1,13 @@
+diff --git a/Makefile b/Makefile
+index 92d6f6e..305ae6b 100644
+--- a/Makefile
++++ b/Makefile
+@@ -210,7 +210,7 @@ $(LIB_SHARED): $(LIB_OBJS)
+ 
+ $(LIB_STATIC_OBJ): $(LIB_OBJS)
+ 	# FIXME Handle user-defined LDFLAGS and LDLIBS
+-	$(LD) -d -r --exclude-libs ALL -L$(DEPS_DIR)$(libdir) $(OUTPUT_OPTION) $^ $(LIB_LDLIBS_STATIC)
++	$(LD) -d -r --exclude-libs ALL -L${BB_LIBDIR} -L$(DEPS_DIR)$(libdir) $(OUTPUT_OPTION) $^ $(LIB_LDLIBS_STATIC)
+ 	$(OBJCPY) --localize-hidden $@
+ 	$(STRIP) --strip-unneeded -R .comment $@
+ 
