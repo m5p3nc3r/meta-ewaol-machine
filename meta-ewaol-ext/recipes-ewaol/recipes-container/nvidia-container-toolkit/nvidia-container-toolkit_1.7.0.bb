@@ -40,7 +40,8 @@ do_install() {
 	install -m 644 -T ${S}/config/config.toml.centos ${D}${sysconfdir}/nvidia-container-runtime/config.toml
 	install -m 755 ${S}/oci-nvidia-hook ${D}${libexecdir}/oci/hooks.d
 	install -m 644 ${S}/oci-nvidia-hook.json ${D}${datadir}/containers/oci/hooks.d 
-
+	
+	ln -sf -r ${D}${bindir}/nvidia-container-toolkit ${D}${bindir}/nvidia-container-runtime-hook
 }
 
 INSANE_SKIP_${PN} += "already-stripped"
