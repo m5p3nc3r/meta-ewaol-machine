@@ -1,8 +1,14 @@
 SUMMARY = "Library and CLI utility to configure GNU/Linux containers using Nvidia hardware"
 HOMEPAGE = "https://github.com/NVIDIA/libnvidia-container"
+
 LICENSE = "Apache-2.0"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=3b83ef96387f14655fc854ddc3c6bd57"
+LICENSE_nvidia-modprobe = "GPL-2.0"
+
+LIC_FILES_CHKSUM = "file://LICENSE;md5=3b83ef96387f14655fc854ddc3c6bd57 \
+	file://../nvmodprobe/COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263"
+
 DEPENDS = "elfutils libtirpc libcap libseccomp"
+RPROVIDES_${PN} = "nvidia-modprobe"
 
 EXTRAFILESPATHS_prepend = "${THISDIR}/${BPN}:"
 
