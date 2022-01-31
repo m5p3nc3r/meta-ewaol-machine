@@ -9,8 +9,7 @@ CLEANBROKEN = "1"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 SRC_URI = "git://github.com/NVIDIA/nvidia-container-toolkit;branch=master;protocol=https \
-           file://0001-Add-GOARCH-customization.patch \
-           file://0002-TEMPORARY-force-aarch64-rpm.patch"
+           file://0001-Add-GOARCH-customization.patch"
 
 SRCREV = "f10f533fb21ee4cd7c298681fc61cc5a1aa09551"
 
@@ -20,7 +19,7 @@ inherit goarch
 
 do_compile() {
 	mkdir -p ${B}${bindir}
-	oe_runmake cmds PREFIX="${B}${bindir}" GOOS="${TARGET_GOOS}"
+	oe_runmake cmds PREFIX="${B}${bindir}" GOOS="${TARGET_GOOS}" GOARCH="${TARGET_GOARCH}"
 }	
 
 FILES_${PN} += "${datadir}/containers/oci/hooks.d/oci-nvidia-hook.json"
