@@ -15,7 +15,8 @@ SRC_URI = "git://github.com/NVIDIA/libnvidia-container.git;protocol=https;destsu
 	git://github.com/NVIDIA/nvidia-modprobe.git;protocol=https;destsuffix=nvmodprobe;rev=292409904a5d18163fc7d1fbc11f98627324b82a;branch=main \
 	file://0001-no-modprobe-fetch.patch \
 	file://0002-disable-libtirpc-build.patch \
-	file://0003-use-local-libtirpc.patch"
+	file://0003-use-local-libtirpc.patch \
+	file://0004-disable-elftoolchain-build.patch"
 
 SRC_URI[sha256sum] = "f37bb387ad05f6e501069d99e4135a97289faf1f"
 
@@ -31,3 +32,9 @@ export OBJCPY="${OBJCOPY}"
 do_compile() {
 	oe_runmake WITH_LIBELF=yes WITH_TIRPC=yes BB_LIBDIR=${STAGING_LIBDIR}
 }
+
+do_install() {
+	oe_runmake install 'DESTDIR=${D}'
+}
+
+INSANE_SKIP_${PN} += "already-stripped"
