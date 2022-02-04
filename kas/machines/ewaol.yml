@@ -1,5 +1,5 @@
 header:
-  version: 1
+  version: 11
   includes:
     - repo: meta-ewaol
       file: meta-ewaol-config/kas/ewaol-base.yml
@@ -14,7 +14,7 @@ repos:
   # Include the upstream ewaol repository
   meta-ewaol:
     url: https://git.gitlab.arm.com/ewaol/meta-ewaol.git
-    refspec: v0.2.2
+    refspec: honister-dev
     path: layers/meta-ewaol
     layers:
         meta-ewaol-distro:
@@ -22,5 +22,5 @@ repos:
 
 local_conf_header:
   meta-ewaol: |
-    IMAGE_INSTALL_append = " nonrootuser sudo xz"
+    IMAGE_INSTALL:append = " nonrootuser sudo xz"
     
