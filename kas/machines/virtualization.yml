@@ -3,11 +3,3 @@ header:
   includes:
     - repo: meta-ewaol
       file: meta-ewaol-config/kas/virtualization.yml
-    - repo: meta-ewaol
-      file: meta-ewaol-config/kas/arm-machines.yml
-
-target: ewaol-host-image
-
-local_conf_header:
-  meta-ewaol: |
-    DISTRO_FEATURES:append = " ewaol-virtualization"
