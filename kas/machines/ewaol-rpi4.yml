@@ -12,7 +12,7 @@ repos:
     path: layers/meta-raspberrypi
 
 local_conf_header:
-  meta-raspberypi: |
+  meta-raspberrypi: |
     # Always nice to have a serial console available :¬)
     ENABLE_UART = "1"
     RPI_EXTRA_CONFIG += "\ndtoverlay=disable-bt"
