@@ -1,0 +1,30 @@
+diff --git a/Makefile b/Makefile
+index 92d6f6e..e4d4458 100644
+--- a/Makefile
++++ b/Makefile
+@@ -23,7 +23,7 @@ WITH_SECCOMP ?= yes
+ 
+ ##### Global definitions #####
+ 
+-export prefix      = /usr/local
++export prefix      = /usr
+ export exec_prefix = $(prefix)
+ export bindir      = $(exec_prefix)/bin
+ export libdir      = $(exec_prefix)/lib
+@@ -210,7 +210,7 @@ $(LIB_SHARED): $(LIB_OBJS)
+ 
+ $(LIB_STATIC_OBJ): $(LIB_OBJS)
+ 	# FIXME Handle user-defined LDFLAGS and LDLIBS
+-	$(LD) -d -r --exclude-libs ALL -L$(DEPS_DIR)$(libdir) $(OUTPUT_OPTION) $^ $(LIB_LDLIBS_STATIC)
++	$(LD) -d -r --exclude-libs ALL -L${BB_LIBDIR} -L$(DEPS_DIR)$(libdir) $(OUTPUT_OPTION) $^ $(LIB_LDLIBS_STATIC)
+ 	$(OBJCPY) --localize-hidden $@
+ 	$(STRIP) --strip-unneeded -R .comment $@
+ 
+@@ -254,7 +254,6 @@ install: all
+ 	$(INSTALL) -m 644 $(LIB_STATIC) $(DESTDIR)$(libdir)
+ 	$(INSTALL) -m 755 $(LIB_SHARED) $(DESTDIR)$(libdir)
+ 	$(LN) -sf $(LIB_SONAME) $(DESTDIR)$(libdir)/$(LIB_SYMLINK)
+-	$(LDCONFIG) -n $(DESTDIR)$(libdir)
+ 	# Install debugging symbols
+ 	$(INSTALL) -m 644 $(DEBUG_DIR)/$(LIB_SONAME) $(DESTDIR)$(libdbgdir)
+ 	# Install configuration files

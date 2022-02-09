@@ -1,0 +1,21 @@
+diff --git a/mk/elftoolchain.mk b/mk/elftoolchain.mk
+index 55cbe54..1b89488 100644
+--- a/mk/elftoolchain.mk
++++ b/mk/elftoolchain.mk
+@@ -48,13 +48,9 @@ $(SRCS_DIR)/.build_stamp: $(SRCS_DIR)/.download_stamp
+ 
+ .PHONY: all install clean $(COMMON) $(LIBELF)
+ 
+-all: $(SRCS_DIR)/.build_stamp
++all: ;
+ 
+ unexport DESTDIR
+-install: all
+-	$(BMAKE) -C $(COMMON) install INCSDIR=$(INCSDIR) DESTDIR=$(DESTDIR)
+-	$(BMAKE) -C $(LIBELF) install INCSDIR=$(INCSDIR) DESTDIR=$(DESTDIR)
++install: ;
+ 
+-clean:
+-	$(RM) $(SRCS_DIR)/.build_stamp
+-	$(BMAKE) -C $(LIBELF) clean
++clean: ;

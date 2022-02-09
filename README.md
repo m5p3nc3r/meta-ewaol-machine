@@ -74,4 +74,9 @@ Put UEFI firmware on the sdcard and the EWAOL image on a usb drive.
 
 ### nvidia-container-toolkit
 
-This recipe is still in testing and currently only supports aarch64 target architecture.
+This recipe is in beta. It should work relatively well, with perhaps a few rough edges.
+Specifically, take note of the following:
+
+- nvidia-modprobe is fetched and built as part of libnvidia-container
+- libnvidia-container technically depends on a specific version of libtirpc, but we're fetching Poky's standard version
+  from recipes-extended. If this causes trouble, this will need to be pinned to the lib's desired version.

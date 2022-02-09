@@ -1,0 +1,20 @@
+diff --git a/mk/libtirpc.mk b/mk/libtirpc.mk
+index 6fd9805..d5d2f08 100644
+--- a/mk/libtirpc.mk
++++ b/mk/libtirpc.mk
+@@ -35,12 +35,8 @@ $(SRCS_DIR)/.build_stamp: $(SRCS_DIR)/.download_stamp
+ 
+ .PHONY: all install clean
+ 
+-all: $(SRCS_DIR)/.build_stamp
++all: ;
+ 
+-unexport DESTDIR
+-install: all
+-	$(MAKE) -C $(SRCS_DIR) install
++install: ;
+ 
+-clean:
+-	$(RM) $(SRCS_DIR)/.build_stamp
+-	$(MAKE) -C $(SRCS_DIR) clean
++clean: ;
