@@ -20,3 +20,6 @@ local_conf_header:
     # Hijack the CMDLINE_DEBUG to get the k3s cmdline requirements enabled
     # We could really do with an upstream friendly way of doing this.
     CMDLINE_DEBUG += " cgroup_memory=1 cgroup_enable=memory"
+
+    RPI_USE_U_BOOT = "1"
+    PREFERRED_PROVIDER_u-boot-default-script = "xen-rpi-u-boot-scr"
