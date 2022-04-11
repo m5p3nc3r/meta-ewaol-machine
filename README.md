@@ -1,3 +1,7 @@
+# NOTE
+
+You are on the main branch, which is generally unmaintained. Please switch to the branch corresponding to the revision of Yocto Project + EWAOL you are using.
+
 # Extra machines for [EWAOL](https://gitlab.arm.com/ewaol/meta-ewaol)
 
 This project contains [kas](https://kas.readthedocs.io/en/latest/index.html)
