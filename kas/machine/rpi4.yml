@@ -1,14 +1,12 @@
 header:
   version: 11
-  includes:
-    - ewaol.yml
 
 machine: raspberrypi4-64
 
 repos:
   meta-raspberrypi:
     url: https://github.com/agherzan/meta-raspberrypi.git
-    refspec: honister
+    refspec: kirkstone
     path: layers/meta-raspberrypi
 
 local_conf_header:

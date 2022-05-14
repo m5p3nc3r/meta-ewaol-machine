@@ -1,14 +1,12 @@
 header:
-  version: 1
-  includes:
-    - ewaol.yml
+  version: 11
 
 machine: khadas-vim3
 
 repos:
   meta-meson:
     url: https://github.com/superna9999/meta-meson.git
-    refspec: hardknott
+    refspec: kirkstone
     path: layers/meta-meson
 
 local_conf_header:

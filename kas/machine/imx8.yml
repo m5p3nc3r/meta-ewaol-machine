@@ -1,0 +1,25 @@
+header:
+  version: 11
+
+machine: imx8mp-lpddr4-evk
+
+repos:
+  # Upstream recipes required to build for the IMX platform
+  meta-freescale:
+    url: https://github.com/Freescale/meta-freescale.git
+    refspec: kirkstone
+    path: layers/meta-freescale
+
+local_conf_header:
+  meta-imx: |
+    # Accept the IMX EULA
+    ACCEPT_FSL_EULA = "1"
+    # meta-freescale doesn't use the kmeta kernel configuration tools
+    KERNEL_CLASSES:remove = "containers_kernelcfg_check k3s_kernelcfg_check"
+#     # Use linux-yocto instead of linux-fscl-imx
+#     PREFERRED_PROVIDER_virtual/kernel_imx = "linux-yocto"
+#     # Exclude broken packages
+#     BBMASK += " /meta-imx/meta-bsp/recipes-devtools/python/*"
+    #
+
+  

@@ -1,8 +1,5 @@
 header:
   version: 11
-  includes:
-    - repo: meta-ewaol
-      file: meta-ewaol-config/kas/ewaol-base.yml
 
 repos:
   # Include this repo so we can apply patches to upstream meta-ewaol
@@ -10,11 +7,11 @@ repos:
   meta-ewaol-machine:
     layers:
       meta-ewaol-ext:
-
+  
   # Include the upstream ewaol repository
   meta-ewaol:
     url: https://git.gitlab.arm.com/ewaol/meta-ewaol.git
-    refspec: honister-dev
+    refspec: kirkstone-dev
     path: layers/meta-ewaol
     layers:
         meta-ewaol-distro:
@@ -22,5 +19,4 @@ repos:
 
 local_conf_header:
   meta-ewaol: |
-    IMAGE_INSTALL:append = " nonrootuser sudo xz"
-    
+    IMAGE_INSTALL:append = " xz"

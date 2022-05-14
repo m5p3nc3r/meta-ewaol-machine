@@ -1,0 +1,6 @@
+header:
+  version: 11
+  includes:
+    - kas/ewaol/ewaol.yml
+    - repo: meta-ewaol
+      file: meta-ewaol-config/kas/baremetal.yml
