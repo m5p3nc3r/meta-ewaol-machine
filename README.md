@@ -11,48 +11,33 @@ code as you find it, and please don't expect it to always be working._
 
 ## Build
 
-Install the kas tool by following the instructions
-[here](https://kas.readthedocs.io/en/latest/userguide.html)
+Install the kas tool, ensuring you have a version 3.0.2 or greater, by following the instructions
+[here](https://kas.readthedocs.io/en/latest/userguide.html).
+
+To build ewaol, use the helper script ```build.sh``` which gives a consistent way of building for the target platforms.
 
 ```bash
-# Building for the imx8mp target
-kas build kas/machines/ewaol-imx8.yml
-```
-
-Or, if you are building for multiple targets, it can be useful to share download
-assets, build caches and you will have to specify a different output directory.
-
-```bash
-# Building for the imx8mp target
-KAS_BUILD_DIR=$PWD/build-imx8 \
-SSTATE_DIR=$HOME/yocto/sstate-cache \
-DL_DIR=$HOME/yocto/downloads \
-kas build kas/machines/ewaol-imx8.yml
+# Building for the rpi4 target
+./build.sh rpi4 baremetal
 ```
 
 ## Install
 
-```bash
-# Assuming your installing to /dev/mmcblk0
-# If you are installing elsewhere, please change this location
-sudo bmaptool copy build-imx8/tmp/deploy/images/imx8mpevk/ewaol-image-docker-imx8mpevk.wic.bz2 /dev/mmcblk0
-```
-
-## Default login
-
-The default non-root user is 'ewaol' with a password 'soafee'.  This user has sudo access if needed.
+Installation instructions for each platform is outlined in the documentation for that platform.  Check out the table in the status section below.
 
 ## Status
 
-| Machine | EWAOL Version |Status | Notes |
+| Machine | EWAOL Version |Status | Documentation |
 |---------|---------------|-------|-------|
-| RPi4    | v0.2.2 | Ok | Booting, able to ssh to target, k3s running |
-| imx8mp  | v0.2.2 | Ok | Booting, able to ssh to target, k3s running |
-| vim3    | v0.2.2 | Compiles | Not yet tested |
-| avadp   | v0.2.1 | Ok | Booting, able to ssh to target, k3s running |  
-| generic-arm64 | v0.2.2 | Ok | Booting, able to ssh to target, k3s running |
+| RPi4    | v1.0 | Ok | [RPi4 Documentation](docs/rpi4.md) |
+| imx8mp  | v1.0 | Compiles | [IMX8 Documentation](docs/imx8.md) |
+| vim3    | v1.0 | Compiles | [VIM3 Documentation](docs/vim3.md) |
+| avadp   | v0.2.1 | Not ported yet | [AVA Documentation](docs.ava.md) |  
+| generic-arm64 | v1.0 | Compiles | [Generic arm64 Documentation](docs/generic-arm64.md) |
 
 ## Machine specific notes
+
+__TODO: MOVE THESE NOTES INTO THE PLATFORM DOCS__
 
 ### iMX8
 
