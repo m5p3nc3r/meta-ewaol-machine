@@ -16,10 +16,6 @@ local_conf_header:
     ACCEPT_FSL_EULA = "1"
     # meta-freescale doesn't use the kmeta kernel configuration tools
     KERNEL_CLASSES:remove = "containers_kernelcfg_check k3s_kernelcfg_check"
-#     # Use linux-yocto instead of linux-fscl-imx
-#     PREFERRED_PROVIDER_virtual/kernel_imx = "linux-yocto"
-#     # Exclude broken packages
-#     BBMASK += " /meta-imx/meta-bsp/recipes-devtools/python/*"
-    #
+    # TODO: Need to add kernel config for k3s
 
   
