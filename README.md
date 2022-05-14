@@ -1,5 +1,8 @@
 # Extra machines for [EWAOL](https://gitlab.arm.com/ewaol/meta-ewaol)
 
+
+__NOTE, EWAOL Kirkstone has not yet been released, this will not work for you yet__
+
 This project contains [kas](https://kas.readthedocs.io/en/latest/index.html)
 configuration to download meta-ewaol and all required layers for multiple
 machines not supported by the upstream project.
