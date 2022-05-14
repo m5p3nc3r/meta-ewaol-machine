@@ -1,6 +1,6 @@
 {
     "files.watcherExclude": {
-        "**/build*/**": true,
-        "**/layers/**": true,
+        "build/**": true,
+        "layers/**": true,
     }
 }
