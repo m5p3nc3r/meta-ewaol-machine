@@ -9,7 +9,7 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=3b83ef96387f14655fc854ddc3c6bd57 \
 
 DEPENDS = "elfutils libtirpc libcap libseccomp"
 
-EXTRAFILESPATHS_prepend = "${THISDIR}/${BPN}:"
+EXTRAFILESPATHS:prepend = "${THISDIR}/${BPN}:"
 
 SRC_URI = "git://github.com/NVIDIA/libnvidia-container.git;protocol=https;destsuffix=libnvidia;rev=f37bb387ad05f6e501069d99e4135a97289faf1f \
 	git://github.com/NVIDIA/nvidia-modprobe.git;protocol=https;destsuffix=nvmodprobe;rev=292409904a5d18163fc7d1fbc11f98627324b82a;branch=main \
