@@ -10,7 +10,7 @@ repos:
   
   # Include the upstream ewaol repository
   meta-ewaol:
-    url: https://git.gitlab.arm.com/ewaol/meta-ewaol.git
+    url: "${EWAOL_REPO_URI:-https://git.gitlab.arm.com/ewaol/meta-ewaol.git}"
     refspec: kirkstone-dev
     path: layers/meta-ewaol
     layers:
