@@ -2,7 +2,7 @@ pipeline {
 	agent {
 		docker {
 			image 'ghcr.io/siemens/kas/kas:latest'
-			args '--entrypoint=""'
+			args "--entrypoint='' --env KAS_PREMIRRORS=${kasPremirrors}"
 		}
 	}
 	stages {
