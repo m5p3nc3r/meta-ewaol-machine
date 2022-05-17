@@ -2,6 +2,7 @@
 
 TARGET=${1:-rpi4}
 TYPE=${2:-baremetal}
+COMMAND=${3:-build}
 
 echo Building EWAOL $TYPE for $TARGET
 
@@ -15,4 +16,4 @@ if [ -z $SSTATE_DIR ]; then
     SSTATE_DIR=$HOME/yocto_cache/sstate
 fi
 
-KAS_BUILD_DIR=$KAS_BUILD_DIR SSTATE_DIR=$SSTATE_DIR DL_DIR=$DL_DIR kas build kas/ewaol/$TYPE.yml:kas/machine/$TARGET.yml
+KAS_BUILD_DIR=$KAS_BUILD_DIR SSTATE_DIR=$SSTATE_DIR DL_DIR=$DL_DIR kas $COMMAND kas/ewaol/$TYPE.yml:kas/machine/$TARGET.yml
