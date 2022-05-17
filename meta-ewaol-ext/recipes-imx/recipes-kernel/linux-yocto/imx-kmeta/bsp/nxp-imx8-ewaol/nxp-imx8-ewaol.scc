@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: MIT
+define KMACHINE nxp-imx8-ewaol
+define KTYPE standard
+
+include ktypes/base/base.scc
+kconf hardware nxp-imx8-ewaol-hw.cfg
+# kconf non-hardware nxp-imx8-ewaol-policy.cfg
+
+include ktypes/standard
+
+include features/profiling/profiling.scc
+include features/usb/ehci-hcd.scc
+include cfg/usb-mass-storage.scc
+include arch/arm/32bit-compat.scc
+include features/mac80211/mac80211.scc
+include features/bluetooth/bluetooth.scc
+include features/hugetlb/hugetlb.scc

@@ -1,24 +1,21 @@
-FILESEXTRAPATHS:prepend:mx8 := "${THISDIR}:${THISDIR}/files:"
-COMPATIBLE_MACHINE:mx8 = "mx8"
+FILESEXTRAPATHS:prepend:imx8mp-lpddr4-evk := "${THISDIR}:${THISDIR}/files:"
+COMPATIBLE_MACHINE:imx8mp-lpddr4-evk = "imx8mp-lpddr4-evk"
 
-SRCBRANCH:mx8 = "lf-5.10.y"
-SRCREV_machine:mx8 = "ef3f2cfc6010c13feb40cfb7fd7490832cf86f45"
-#SRCREV_meta:mx8 = "ea88d1fbe10d60ebfd453bc0aec42a628d4e820f"
-SRCREV_meta:mx8 = "de35f8006d0f932924752ddda94dd24e2da67fbc"
+SRCBRANCH:imx8mp-lpddr4-evk = "lf-5.15.y"
+SRCREV_machine:imx8mp-lpddr4-evk = "c1084c2773fc1005ed140db625399d5334d94a28"
 
-# SRCREV_meta = "2327ef4bf45040c46d701278c6bd8d98727e9d0a"
+KMACHINE:imx8mp-lpddr4-evk = "nxp-imx8-ewaol"
 
-KMACHINE:mx8 = "nxp-imx8"
+LINUX_VERSION:imx8mp-lpddr4-evk = "5.15.5"
 
-LINUX_VERSION:mx8 = "5.10.35"
+# This recipe piggybacks upstream linux-yocto, but we need ro remove the kernel source
+# to replace it with the downstream kernel
+SRC_URI:remove:imx8mp-lpddr4-evk = "git://git.yoctoproject.org/linux-yocto.git;name=machine;branch=${KBRANCH};"
 
-SRC_URI:mx8 = " \
+# We don't need to include yocto-kernel-cache as it is defined in upstream linux-yocto
+# Just add our machine specific fragments
+# For details of how imx-kmeta was created, check the readme.md
+SRC_URI:append:imx8mp-lpddr4-evk = " \
     git://source.codeaurora.org/external/imx/linux-imx;name=machine;protocol=https;branch=${SRCBRANCH} \
-    git://git.yoctoproject.org/yocto-kernel-cache;type=kmeta;name=meta;branch=yocto-5.10;destsuffix=${KMETA} \
     file://imx-kmeta;type=kmeta;destsuffix=imx-kmeta \
-    file://allow_kconfig_patch.patch \
 "
-
-# There is a partial implementation of the mx8-standard upstream in yocto-kernel-cache
-# So just include the additional features we need here until they are put upstream
-KERNEL_FEATURES:append:mx8 = " bsp/mx8.scc"

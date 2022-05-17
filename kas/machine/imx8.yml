@@ -14,8 +14,8 @@ local_conf_header:
   meta-imx: |
     # Accept the IMX EULA
     ACCEPT_FSL_EULA = "1"
-    # meta-freescale doesn't use the kmeta kernel configuration tools
-    KERNEL_CLASSES:remove = "containers_kernelcfg_check k3s_kernelcfg_check"
-    # TODO: Need to add kernel config for k3s
+    # Use our local linux-yocto recipe - derived from upstream
+    # Details in meta-ewaol.ext/recipes-imx/README.md
+    PREFERRED_PROVIDER_virtual/kernel = "linux-yocto"
 
   
