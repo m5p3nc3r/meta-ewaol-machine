@@ -2,7 +2,9 @@
 
 ## Status
 
-The baremetal image builds, but is currently missing kernel configuration to enable k3s to operate properly.  A question has been [raised upstream](https://github.com/Freescale/meta-freescale/issues/1087) on the best way to resolve this issue.
+The baremetal image builds, but is currently missing kernel configuration to enable k3s to operate properly.  We have created a local downstream kmeta based recipe that derives from the upstream meta-freescale.  Information on this process is captured in the [recipes-imx/README.md](../meta-ewaol-ext/recipes-imx/README.md).  A question has been [raised upstream](https://github.com/Freescale/meta-freescale/issues/1087) to see if we can get this adopted, but for now, this is functinoal.
+
+You currently get a lot of warnings during the kernel build, this is because of configuration conflicts in ther kernel.  This is not a problem for the resulting build, I don't plan on fixing the warnings because they don't currently impact the functionality.
 
 The virtualization image is not currently functional.
 
@@ -29,5 +31,4 @@ The console is available on the third UART interface, so if they are enumerated 
 
 ## Known issues
 
-- k3s kernel configuration not applying
 - virtualization image not tested

@@ -33,7 +33,7 @@ Installation instructions for each platform is outlined in the documentation for
 | Machine | EWAOL Version |Status | Documentation |
 |---------|---------------|-------|-------|
 | RPi4    | v1.0 | Ok | [RPi4 Documentation](docs/rpi4.md) |
-| imx8mp  | v1.0 | Compiles | [IMX8 Documentation](docs/imx8.md) |
+| imx8mp  | v1.0 | Ok | [IMX8 Documentation](docs/imx8.md) |
 | vim3    | v1.0 | Compiles | [VIM3 Documentation](docs/vim3.md) |
 | avadp   | v0.2.1 | Not ported yet | [AVA Documentation](docs.ava.md) |  
 | generic-arm64 | v1.0 | Compiles | [Generic arm64 Documentation](docs/generic-arm64.md) |
