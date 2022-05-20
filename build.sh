@@ -15,5 +15,6 @@ fi
 if [ -z $SSTATE_DIR ]; then
     SSTATE_DIR=$HOME/yocto_cache/sstate
 fi
+mkdir -p $KAS_BUILD_DIR
 
 KAS_BUILD_DIR=$KAS_BUILD_DIR SSTATE_DIR=$SSTATE_DIR DL_DIR=$DL_DIR kas $COMMAND kas/ewaol/$TYPE.yml:kas/machine/$TARGET.yml
