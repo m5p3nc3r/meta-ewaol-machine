@@ -8,7 +8,7 @@ def build(Map config) {
 	def kasfileName
 
 	// If a kas filename is specified, use that. Otherwise, use the machine name.
-	if (config.containsKey("kasfile") {
+	if (config.containsKey("kasfile")) {
 		kasfileName = config.kasfile
 	} else {
 		kasfileName = config.machine
