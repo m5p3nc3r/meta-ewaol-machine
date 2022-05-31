@@ -1,5 +1,5 @@
 def ewaol
-def machineId = "comhpc"
+def machineId = "ava"
 
 pipeline {
 	agent {

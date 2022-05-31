@@ -17,7 +17,7 @@ repos:
       meta-gnome:
       meta-multimedia:
 
-machine: comhpc
+machine: ava
 
 local_conf_header:
   meta-at: |
