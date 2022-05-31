@@ -13,7 +13,7 @@ pipeline {
 			steps {
 				script {
 					def rootDir = pwd()
-					ewaol = load "${rootDir}/ewaol.groovy"
+					ewaol = load "${rootDir}/ci/pipelines/ewaol.groovy"
 				}
 			}
 		}
