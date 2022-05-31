@@ -20,7 +20,7 @@ pipeline {
 		stage('Checkout') {
 			steps {
 				script {
-					ewaol.checkoutMachines branch: 'kirkstone-dev'
+					ewaol.checkoutMachines branch: 'kirkstone-dev-ci-test'
 				}
 			}
 		}
