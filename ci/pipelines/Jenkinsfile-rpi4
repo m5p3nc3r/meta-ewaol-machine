@@ -19,17 +19,23 @@ pipeline {
 		}
 		stage('Checkout') {
 			steps {
-				ewaol.checkoutMachines branch: 'kirkstone-dev'
+				script {
+					ewaol.checkoutMachines branch: 'kirkstone-dev'
+				}
 			}
 		}
 		stage('Build Baremetal') {
 			steps {
-				ewaol.build artifactTypes: ["wic"], image: 'baremetal', machine: machineId
+				script {
+					ewaol.build artifactTypes: ["wic"], image: 'baremetal', machine: machineId
+				}
 			}
 		}
 		stage('Build Virtualization') {
 			steps {
-				ewaol.build artifactTypes: ["wic"], image: 'virtualization', machine: machineId
+				script {
+					ewaol.build artifactTypes: ["wic"], image: 'virtualization', machine: machineId
+				}
 			}
 		}
 	}
