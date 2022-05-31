@@ -5,8 +5,17 @@ def checkoutMachines(Map config) {
 }
 
 def build(Map config) {
+	def kasfileName
+
+	// If a kas filename is specified, use that. Otherwise, use the machine name.
+	if (config.containsKey("kasfile") {
+		kasfileName = config.kasfile
+	} else {
+		kasfileName = config.machine
+	}
+
         dir('meta-ewaol-machine') {
-		sh "kas build kas/ewaol/${config.image}.yml:kas/machine/${config.machine}.yml"
+		sh "kas build kas/ewaol/${config.image}.yml:kas/machine/${config.kasfile}.yml"
 		if (config.artifactTypes.contains("wic")) {
                 	archiveArtifacts artifacts: "build/tmp_${config.image}/deploy/**/*.wic",
                         	excludes: "build/tmp_${config.image}/deploy/**/*.rootfs.wic"
