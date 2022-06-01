@@ -27,14 +27,14 @@ pipeline {
 		stage('Build Baremetal') {
 			steps {
 				script {
-					ewaol.build artifactTypes: ["wic"], image: 'baremetal', machine: machineId, kasfile: 'avadp-xfce'
+					ewaol.build artifactTypes: ["wic"], image: 'baremetal', machine: machineId, kasfile: 'avadp-xfce', sdk: true
 				}
 			}
 		}
 		stage('Build Virtualization') {
 			steps {
 				script {
-					ewaol.build artifactTypes: ["wic"], image: 'virtualization', machine: machineId
+					ewaol.build artifactTypes: ["wic"], image: 'virtualization', machine: machineId, kasfile: 'avadp-xfce', sdk: true
 				}
 			}
 		}
