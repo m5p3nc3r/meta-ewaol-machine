@@ -1,0 +1,8 @@
+header:
+  version: 11
+  includes:
+    - repo: meta-ewaol
+      file: meta-ewaol-config/kas/include/sdk.yml
+
+target:
+  - ewaol-baremetal-sdk-image    

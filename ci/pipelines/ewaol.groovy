@@ -6,7 +6,7 @@ def checkoutMachines(Map config) {
 
 def build(Map config) {
 	def kasfileMachineName
-	def kasfileEwaolName
+	def kasfileAdditions
 
 	// If a kas filename is specified, use that. Otherwise, use the machine name.
 	if (config.containsKey("kasfile")) {
@@ -15,13 +15,13 @@ def build(Map config) {
 		kasfileMachineName = config.machine
 	}
 	
-	// If sdk image type specified, this affects the yml file, but not the TMPDIR
+	// If sdk image type specified, this affects the yml file composition, but not the TMPDIR
 	if (config.get("sdk", false)) {
-		kasfileEwaolName = config.image + "-sdk"
+		kasfileAdditions = "kas/machine/sdk.yml"
 	}
 
         dir('meta-ewaol-machine') {
-		sh "kas build kas/ewaol/${kasfileEwaolName}.yml:kas/machine/${kasfileMachineName}.yml"
+		sh "kas build kas/ewaol/${config.image}.yml:${kasfileAdditions}:kas/machine/${kasfileMachineName}.yml"
 		if (config.artifactTypes.contains("wic")) {
                 	archiveArtifacts artifacts: "build/tmp_${config.image}/deploy/**/*.wic",
                         	excludes: "build/tmp_${config.image}/deploy/**/*.rootfs.wic"
