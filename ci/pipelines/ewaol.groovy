@@ -10,9 +10,9 @@ def build(Map config) {
 
 	// If a kas filename is specified, use that. Otherwise, use the machine name.
 	if (config.containsKey("kasfile")) {
-		kasfileName = config.kasfile
+		kasfileMachineName = config.kasfile
 	} else {
-		kasfileName = config.machine
+		kasfileMachineName = config.machine
 	}
 	
 	// If sdk image type specified, this affects the yml file, but not the TMPDIR
