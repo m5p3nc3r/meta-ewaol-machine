@@ -15,7 +15,7 @@ def build(Map config) {
 	}
 
         dir('meta-ewaol-machine') {
-		sh "kas build kas/ewaol/${config.image}.yml:kas/machine/${config.kasfile}.yml"
+		sh "kas build kas/ewaol/${config.image}.yml:kas/machine/${kasfileName}.yml"
 		if (config.artifactTypes.contains("wic")) {
                 	archiveArtifacts artifacts: "build/tmp_${config.image}/deploy/**/*.wic",
                         	excludes: "build/tmp_${config.image}/deploy/**/*.rootfs.wic"

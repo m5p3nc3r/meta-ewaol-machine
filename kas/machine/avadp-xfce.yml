@@ -6,6 +6,8 @@ repos:
     url: "https://github.com/ADLINK/meta-adlink-ampere.git"
     refspec: kirkstone
     path: layers/meta-adlink-ampere
+    layers:
+      .:
 
   meta-openembedded:
     url: "https://github.com/openembedded/meta-openembedded.git"
