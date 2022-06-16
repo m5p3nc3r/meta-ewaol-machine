@@ -21,9 +21,9 @@ def build(Map config) {
 	}
 
         dir('meta-ewaol-machine') {
-		sh "kas build kas/ewaol/${config.image}${sdk}.yml:kas/machine/${kasfileMachineName}.yml"
+		sh "kas build kas/ewaol/${config.image}${sdk}.yml:kas/machine/${kasfileMachineName}.yml:kas/ewaol/ci-constraints.yml"
 		if (config.artifactTypes.contains("wic")) {
-                	archiveArtifacts artifacts: "build/tmp_${config.image}/deploy/images/**/*.rootfs.wic*"
+                	archiveArtifacts artifacts: "build/tmp_${config.image}/deploy/images/**/*.rootfs.wic.bz2"
 		}
         }	
 }
