@@ -20,7 +20,3 @@ repos:
 local_conf_header:
   meta-ewaol: |
     IMAGE_INSTALL:append = " xz"
-
-    # All machines should support wic with a wks file.
-    # If this is not the case, a wks file should be authored, and WKS_FILE set.
-    IMAGE_FSTYPES += "wic.gz"
