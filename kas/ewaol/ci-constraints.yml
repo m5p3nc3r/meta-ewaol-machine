@@ -1,0 +1,11 @@
+# Constraints imposed on the EWAOL build for CI.
+# At the moment, this consists of:
+#	- Image type: wic.bz2 (requires image WKS/"kickstart" file(s) to 
+#	                       describe partitioning information)
+
+header:
+  version: 11
+
+local_conf_header:
+  meta-ewaol-machine: |
+    IMAGE_FSTYPES := "wic.bz2"

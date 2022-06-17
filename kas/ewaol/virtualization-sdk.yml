@@ -1,0 +1,9 @@
+header:
+  version: 11
+  includes:
+    - kas/ewaol/virtualization.yml
+    - repo: meta-ewaol
+      file: meta-ewaol-config/kas/include/sdk.yml
+
+target:
+  - ewaol-virtualization-sdk-image    

@@ -1,0 +1,42 @@
+def ewaol
+def machineId = "generic-arm64"
+
+pipeline {
+	agent {
+		docker {
+			image 'ghcr.io/siemens/kas/kas:latest'
+			args "--entrypoint='' --env KAS_PREMIRRORS=${kasPremirrors}"
+		}
+	}
+	stages {
+		stage('Load EWAOL Functions') {
+			steps {
+				script {
+					def rootDir = pwd()
+					ewaol = load "${rootDir}/ewaol.groovy"
+				}
+			}
+		}
+		stage('Checkout') {
+			steps {
+				script {
+					ewaol.checkoutMachines branch: 'kirkstone-dev'
+				}
+			}
+		}
+		stage('Build Baremetal') {
+			steps {
+				script {
+					ewaol.build artifactTypes: ["wic"], image: 'baremetal', machine: machineId
+				}
+			}
+		}
+		stage('Build Virtualization') {
+			steps {	
+				script {
+					ewaol.build artifactTypes: ["wic"], image: 'virtualization', machine: machineId
+				}
+			}
+		}
+	}
+}
