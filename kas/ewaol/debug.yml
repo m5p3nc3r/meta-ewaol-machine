@@ -1,0 +1,6 @@
+header:
+  version: 11
+
+local_conf_header:
+  ewaol-base: |
+    CORE_IMAGE_EXTRA_INSTALL += "trace-cmd perf"
