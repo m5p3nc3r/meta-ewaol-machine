@@ -1,0 +1,15 @@
+header:
+  version: 11
+  includes:
+    - repo: meta-ewaol
+      file: meta-ewaol-config/kas/include/arm-machines.yml
+
+machine: generic-arm64
+
+repos:
+  meta-arm:
+    refspec: kirkstone
+
+local_conf_header:
+  meta-azure: |
+    IMAGE_INSTALL:append = " azurelinuxagent"
