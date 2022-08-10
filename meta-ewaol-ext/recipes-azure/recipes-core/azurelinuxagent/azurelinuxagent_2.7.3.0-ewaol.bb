@@ -19,7 +19,7 @@ SETUPTOOLS_BUILD_ARGS = " \
 "
 
 SYSTEMD_AUTO_ENABLE = "enable"
-SYSTEMD_SERVICE:${PN} = "waagent"
+SYSTEMD_SERVICE:${PN} = "waagent.service"
 
 #  Do not use setuptools3.bbclass, as we need to install,
 #  not gen a bdist_wheel
