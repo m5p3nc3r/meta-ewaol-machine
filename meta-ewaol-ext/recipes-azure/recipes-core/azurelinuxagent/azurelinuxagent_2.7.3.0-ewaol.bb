@@ -27,7 +27,7 @@ SYSTEMD_SERVICE:${PN} = "waagent.service"
 S = "${WORKDIR}/git"
 
 DEPENDS += "python3-distro-native"
-RDEPENDS_${PN} += " \
+RDEPENDS:${PN} += " \
 	bash \
 	python3-pyasn1 \
 	ip-route \
