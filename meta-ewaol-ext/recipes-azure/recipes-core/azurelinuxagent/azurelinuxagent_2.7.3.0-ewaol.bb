@@ -41,3 +41,9 @@ do_install() {
 	${STAGING_BINDIR_NATIVE}/python3-native/python3 setup.py \
 		install --verbose ${SETUPTOOLS_BUILD_ARGS}
 }
+
+FILES:${PN} += " \
+	${base_libdir}/systemd/system/azure.slice \
+	${base_libdir}/system/waagent.service \
+	${base_libdir}/system/azure-vmextensions.slice \
+"
