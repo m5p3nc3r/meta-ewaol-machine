@@ -1,6 +1,7 @@
 SUMMARY = "Microsoft Azure Linux Agent"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=cce6fd055830ca30ff78fdf077e870d6"
+inherit systemd
 
 SRC_URI = " \
 	git://github.com/benmordaunt/WALinuxAgent.git;branch=master;protocol=https \
@@ -16,6 +17,9 @@ SETUPTOOLS_BUILD_ARGS = " \
         --lnx-distro-fullname='${DISTRO_NAME}' \
         --sysroot='${D}' \
 "
+
+SYSTEMD_AUTO_ENABLE = "enable"
+SYSTEMD_SERVICE:${PN} = "waagent"
 
 #  Do not use setuptools3.bbclass, as we need to install,
 #  not gen a bdist_wheel
