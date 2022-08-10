@@ -14,7 +14,7 @@ SETUPTOOLS_BUILD_ARGS = " \
 	--lnx-distro=${DISTRO} \
         --lnx-distro-version=${DISTRO_VERSION} \
         --lnx-distro-fullname='${DISTRO_NAME}' \
-        --sysroot='${B}' \
+        --sysroot='${D}' \
 "
 
 #  Do not use setuptools3.bbclass, as we need to install,
