@@ -30,14 +30,11 @@ DEPENDS += "python3-distro-native"
 RDEPENDS:${PN} += " \
 	bash \
 	python3-pyasn1 \
-	ip-route \
 	sudo \
 	openssl \
 	openssh \
 	parted \
-	sfdisk \
-	fdisk \
-	mkfs \
+	e2fsprogs-mke2fs \
 "
 
 do_install() {
