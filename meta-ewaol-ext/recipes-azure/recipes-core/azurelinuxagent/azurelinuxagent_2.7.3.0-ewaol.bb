@@ -44,6 +44,6 @@ do_install() {
 
 FILES:${PN} += " \
 	${base_libdir}/systemd/system/azure.slice \
-	${base_libdir}/system/waagent.service \
-	${base_libdir}/system/azure-vmextensions.slice \
+	${base_libdir}/systemd/system/waagent.service \
+	${base_libdir}/systemd/system/azure-vmextensions.slice \
 "
