@@ -4,7 +4,7 @@ header:
     - repo: meta-ewaol
       file: meta-ewaol-config/kas/include/arm-machines.yml
 
-machine: azure-vm
+machine: azure-vm-arm64
 
 repos:
   meta-arm:

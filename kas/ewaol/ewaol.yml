@@ -11,7 +11,7 @@ repos:
   # Include the upstream ewaol repository
   meta-ewaol:
     url: https://git.gitlab.arm.com/ewaol/meta-ewaol.git
-    refspec: kirkstone-dev
+    refspec: kirkstone-dev  # kirkstone branch has issues in meta-virtualization
     path: layers/meta-ewaol
     layers:
         meta-ewaol-distro:
