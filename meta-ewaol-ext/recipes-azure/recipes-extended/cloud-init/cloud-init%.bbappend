@@ -41,7 +41,7 @@ mounts:
 EOF
 
 	mkdir -p ${D}/etc/systemd/system.conf.d	
-	cat > ${D}/etc/systemd/system.conf.d/00-azure-env.cfg <<EOF
+	cat > ${D}/etc/systemd/system.conf.d/00-azure-env.conf <<EOF
 [Manager]
 DefaultEnvironment="CLOUD_CFG=/etc/cloud/cloud.cfg.d/00-azure-swap.cfg"
 EOF
