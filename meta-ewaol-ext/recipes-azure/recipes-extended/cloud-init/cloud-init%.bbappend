@@ -40,10 +40,13 @@ mounts:
   - ["ephemeral0.2", "none", "swap", "sw,nofail,x-systemd.requires=cloud-init.service,x-systemd.device-timeout=2", "0", "0"]
 EOF
 
+	mkdir -p ${D}/etc/systemd/system.conf.d	
+	cat > ${D}/etc/systemd/system.conf.d/00-azure-env.cfg <<EOF
+[Manager]
+DefaultEnvironment="CLOUD_CFG=/etc/cloud/cloud.cfg.d/00-azure-swap.cfg"
+EOF
+
 }
 
-pkg_postinst:${PN} () {
-#!/bin/sh -e
-echo 'DefaultEnvironment="CLOUD_CFG=/etc/cloud/cloud.cfg.d/00-azure-swap.cfg"' >> $D/etc/systemd/system.conf
-}
+FILES:${PN} += "/etc/systemd/system.conf.d/*"
 
