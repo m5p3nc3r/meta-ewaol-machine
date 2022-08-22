@@ -4,6 +4,6 @@
 
 part /boot --source bootimg-efi --sourceparams="loader=${EFI_PROVIDER}" --label boot --active --align 1024 --use-uuid
 
-part / --source rootfs --fstype=ext4 --label root --align 1024 --use-uuid
+part / --source rootfs --fstype=ext4 --label root --align 1024 --uuid=d6262e83-3b44-471b-a183-0bf15ca91d9e
 
 bootloader --ptable gpt --timeout=5 --configfile="azure-grub.cfg" 
