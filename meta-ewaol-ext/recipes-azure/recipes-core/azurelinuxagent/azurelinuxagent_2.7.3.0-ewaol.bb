@@ -49,6 +49,10 @@ do_install:append () {
 	sed -i 's/Provisioning.Agent=auto/Provisioning.Agent=cloud-init/g' ${D}/etc/waagent.conf
 	sed -i 's/ResourceDisk.Format=y/ResourceDisk.Format=n/g' ${D}/etc/waagent.conf
 	sed -i 's/ResourceDisk.EnableSwap=y/ResourceDisk.EnableSwap=n/g' ${D}/etc/waagent.conf
+
+	# Ensure that the service calls upon python3 instead of python
+	sed -i 's/\/usr\/bin\/python/\/usr\/bin\/python3/g' ${D}/lib/systemd/system/waagent.service
+
 }
 
 FILES:${PN} += " \
