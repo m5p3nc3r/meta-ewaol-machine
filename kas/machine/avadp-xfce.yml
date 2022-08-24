@@ -1,29 +1,21 @@
 header:
   version: 11
+  includes:
+    - avadp.yml
 
 repos:
-  meta-adlink-ampere:
-    url: "https://github.com/ADLINK/meta-adlink-ampere.git"
-    refspec: kirkstone
-    path: layers/meta-adlink-ampere
-    layers:
-      .:
-
   meta-openembedded:
     url: "https://github.com/openembedded/meta-openembedded.git"
     refspec: kirkstone
     path: layers/meta-openembedded
     layers:
       meta-xfce:
-      meta-oe:
       meta-gnome:
       meta-multimedia:
 
-machine: ava
-
 local_conf_header:
-  meta-at: |
+  meta-at-xfce: |
     XSERVER:append = " xserver-xorg-extension-glx xserver-xorg-module-libwfb xserver-xorg-module-exa"
-    IMAGE_INSTALL:append = " packagegroup-core-x11 packagegroup-xfce-base acpid xf86-video-modesetting mesa-demos"
+    IMAGE_INSTALL:append = " packagegroup-core-x11 packagegroup-xfce-base xf86-video-modesetting mesa-demos"
     DISTRO_FEATURES:append = " opengl x11 glx"
-    PACKAGECONFIG:append:pn-xserver-xorg = " xinerama"    
+    PACKAGECONFIG:append:pn-xserver-xorg = " xinerama"
