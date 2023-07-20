@@ -8,7 +8,7 @@ DEPENDS = "libnvidia-container go-native"
 CLEANBROKEN = "1"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
-SRC_URI = "git://github.com/NVIDIA/nvidia-container-toolkit;branch=master;protocol=https \
+SRC_URI = "git://github.com/NVIDIA/nvidia-container-toolkit;branch=main;protocol=https \
            file://0001-Add-GOARCH-customization.patch"
 
 SRCREV = "f10f533fb21ee4cd7c298681fc61cc5a1aa09551"
